@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE XML>
+
+<families xmlns="http://www.it-academy.by/Family-schema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.it-academy.by/Family-schema Family-schema.xsd">
+	<family id="1">
+		<mother>
+			<lastname>Ivanova</lastname>
+			<firstname>Anna</firstname>
+			<age>35</age>
+			<maiden-name>Petrovna</maiden-name>
+		</mother>
+		<father>
+			<lastname>Ivanov</lastname>
+			<firstname>Igor</firstname>
+			<age>25</age>
+		</father>
+		<children>
+			<child>
+				<lastname>Ivanov</lastname>
+				<firstname>Ivan</firstname>
+				<age>2</age>
+				<male />
+			</child>
+			<child>
+				<lastname>Ivanov</lastname>
+				<firstname>Kate</firstname>
+				<age>3</age>
+				<female />
+			</child>
+		</children>
+
+	</family>
+</families>

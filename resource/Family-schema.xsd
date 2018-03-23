@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xns:schema xmlns:xns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.it-academy.by/Family-schema" xmlns:itacby="http://www.it-academy.by/Family-schema"
+	elementFormDefault="qualified">
+
+
+	<xns:element name="families">
+		<xns:complexType>
+			<xns:sequence>
+				<xns:element name="family" type="itacby:family_type"></xns:element>
+			</xns:sequence>
+		</xns:complexType>
+	</xns:element>
+
+	<xns:complexType name="family_type">
+		<xns:sequence>
+			<xns:element name="mother" type="itacby:mother_type"></xns:element>
+			<xns:element name="father" type="itacby:father_type"></xns:element>
+			<xns:element name="children" type="itacby:children_type"
+				minOccurs="0"></xns:element>
+		</xns:sequence>
+		<xns:attribute name="id" />
+	</xns:complexType>
+
+	<xns:complexType name="family_member_info">
+		<xns:sequence>
+			<xns:element name="lastname" type="xns:string"></xns:element>
+			<xns:element name="firstname" type="xns:string"></xns:element>
+			<xns:element name="age">
+				<xns:simpleType>
+					<xns:restriction base="xns:int">
+						<xns:minExclusive value="0" />
+						<xns:maxExclusive value="200" />
+					</xns:restriction>
+				</xns:simpleType>
+			</xns:element>
+
+		</xns:sequence>
+	</xns:complexType>
+
+	<xns:complexType name="mother_type">
+		<xns:complexContent>
+			<xns:extension base="itacby:family_member_info">
+				<xns:sequence>
+					<xns:element name="maiden-name" type="xns:string"></xns:element>
+				</xns:sequence>
+			</xns:extension>
+		</xns:complexContent>
+	</xns:complexType>
+
+	<xns:complexType name="father_type">
+		<xns:sequence>
+			<xns:element name="lastname" type="xns:string"></xns:element>
+			<xns:element name="firstname" type="xns:string"></xns:element>
+			<xns:element name="age" type="xns:int"></xns:element>
+		</xns:sequence>
+	</xns:complexType>
+
+	<xns:complexType name="children_type">
+		<xns:sequence maxOccurs="unbounded">
+			<xns:element name="child" type="itacby:child_type" />
+		</xns:sequence>
+	</xns:complexType>
+
+	<xns:complexType name="child_type">
+		<xns:sequence>
+			<xns:element name="lastname" type="xns:string"></xns:element>
+			<xns:element name="firstname" type="xns:string"></xns:element>
+			<xns:element name="age" type="xns:int"></xns:element>
+			<xns:choice>
+				<xns:element name="male" />
+				<xns:element name="female" />
+			</xns:choice>
+		</xns:sequence>
+	</xns:complexType>
+</xns:schema>
+
+<!-- xmlns - xmlnamespace; targetNamespace - nazvanie slovari tagof; xmls 
+	: tng - target name space (prefiks) -->
